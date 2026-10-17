@@ -1,0 +1,28 @@
+# 게임 원본·산출물 (배포하지 않음)
+*.3ds
+*.cia
+*.ncch
+*.cxi
+*.xdelta
+*.moflex
+*.pkts
+*.yuv
+ext/
+dec/
+build/
+imgout/
+texdump/
+tr/
+# 글꼴·외부 실행 파일·이미지
+*.ttf
+*.otf
+*.exe
+*.dll
+*.png
+*.zip
+bin/
+obj/
+out/
+# 파이썬
+__pycache__/
+*.pyc
