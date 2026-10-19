@@ -1,11 +1,11 @@
 {
- "version": "v1.0",
- "asset": "LostHeroes_BonusEdition_3DS_KO_v1.0.xdelta",
- "asset_size": 1027927039,
- "asset_sha256": "06d8b8e40f5a694ca544ff96ea35d9ce90a8980cf1286943a74c8fe0c1dabd90",
+ "version": "v1.1",
+ "asset": "LostHeroes_BonusEdition_3DS_KO_v1.1.xdelta",
+ "asset_size": 1027936330,
+ "asset_sha256": "4d1c2b142a22ed017e0e4a8e6c6e6e155a329dc023b18022e20d08686c2dd8dd",
  "source_cia_size": 917616960,
  "source_cia_md5": "632e0bf931eff99aec589289787d930f",
  "source_cia_sha256": "1c30dbf804667b78ebf82cac20bf8ce289ca4efb2bbb97820b8d759f19de7ef3",
- "result_cia_size": 1059288064,
- "result_cia_sha256": "80e284f6420d4e2711515da1c6b887b366591ec25fcbc0b834184a2c36dc3795"
+ "result_cia_size": 1059304448,
+ "result_cia_sha256": "cee4cc51f2952340a1b5c784361561d74b341232602c34676219c8b33816d8a4"
 }

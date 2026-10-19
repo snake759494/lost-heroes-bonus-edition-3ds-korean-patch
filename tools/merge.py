@@ -12,5 +12,10 @@ for f in sorted(glob.glob(os.path.join(B,'tr','in','*.json'))):
 fx=os.path.join(B,'tr','fix.json')
 if os.path.exists(fx):
     for j,k in json.load(open(fx,encoding='utf-8')).items(): jp2ko[j]=k
+rp=os.path.join(B,'tr','replace.json')
+if os.path.exists(rp):
+    R=json.load(open(rp,encoding='utf-8'))
+    for j in jp2ko:
+        for a,b in R.items(): jp2ko[j]=jp2ko[j].replace(a,b)
 cur={u['jp']:u['id'] for u in U}
 json.dump({str(cur[j]):k for j,k in jp2ko.items() if j in cur},open(os.path.join(B,'ko_all.json'),'w',encoding='utf-8'),ensure_ascii=False)

@@ -94,7 +94,7 @@ print('mbb done, enc fails', bad, 'translated units', len(ko), '/', len(units), 
 
 # ---- fonts
 FONTS = [('Font14', 14, 16, (0, 1, 13, 13), 'NanumSquareNeo-cBd.ttf', 13),
-         ('Font10', 10, 10, (0, 0, 10, 10), 'NanumSquareNeo-cBd.ttf', 36)]
+         ('Font10', 10, 10, (0, 0, 10, 10), 'NanumSquareNeo-cBd.ttf', 40)]
 def chars_by_index():
     inv = {}
     for c, k in CODE.items():
@@ -110,7 +110,7 @@ for name, cw, chh, box, fname, size in FONTS:
     for idx in range(363, ncell):
         ti, k = divmod(idx, per); r, c = divmod(k, 256 // cw)
         ch = inv.get(idx)
-        g = (render_ss(ch, cw, chh, fname, size) if cw == 10 else render(ch, cw, chh, box, fname, size)) if ch else np.zeros((chh, cw), np.uint8)
+        g = (render_ss(ch, cw, chh, fname, size, gam=0.6) if cw == 10 else render(ch, cw, chh, box, fname, size)) if ch else np.zeros((chh, cw), np.uint8)
         imgs[ti][r * chh:(r + 1) * chh, c * cw:(c + 1) * cw] = g
     for t, im in zip(tx, imgs):
         d[t['pos']:t['pos'] + t['size']] = tile4(im)
@@ -130,6 +130,9 @@ for prel, names in packs.items():
         n = e[0].replace(chr(92), '/')
         if n in FONTDATA: e[2] = FONTDATA[n]; ch = True; continue
         built = os.path.join(OUT, n)
+        if '/' not in n and n.lower().endswith('.mbb'):
+            cand = glob.glob(os.path.join(OUT, 'Table', '**', n), recursive=True)
+            if len(cand) == 1: built = cand[0]
         if n.lower().endswith('.mbb') and os.path.exists(built):
             e[2] = open(built, 'rb').read(); ch = True
     if ch:

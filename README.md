@@ -5,8 +5,8 @@
 ## 적용 방법
 1. 아래 해시와 일치하는 **원본 eShop CIA**를 준비합니다. 다른 덤프에는 적용할 수 없습니다.
    - PowerShell: `Get-FileHash -Algorithm MD5 -LiteralPath '.\Lost Heroes (Bonus Edition) (Japan) (eShop).cia'`
-2. xdeltaUI 같은 도구로 원본에 `LostHeroes_BonusEdition_3DS_KO_v1.0.xdelta`를 적용합니다.
-   - 명령줄: `xdelta3 -d -s "Lost Heroes (Bonus Edition) (Japan) (eShop).cia" LostHeroes_BonusEdition_3DS_KO_v1.0.xdelta "Lost Heroes (Bonus Edition) (Korean).cia"`
+2. xdeltaUI 같은 도구로 원본에 `LostHeroes_BonusEdition_3DS_KO_v1.1.xdelta`를 적용합니다.
+   - 명령줄: `xdelta3 -d -s "Lost Heroes (Bonus Edition) (Japan) (eShop).cia" LostHeroes_BonusEdition_3DS_KO_v1.1.xdelta "Lost Heroes (Bonus Edition) (Korean).cia"`
 3. 만들어진 `.cia`를 Azahar 같은 3DS 에뮬레이터에 설치해 실행합니다.
    - `.3ds`(CCI)가 필요하면 makerom으로 변환합니다: `makerom -ciatocci "Lost Heroes (Bonus Edition) (Korean).cia"`
 
@@ -15,10 +15,10 @@
 | 원본 CIA 크기 | 917,616,960 바이트 |
 | 원본 CIA MD5 | `632e0bf931eff99aec589289787d930f` |
 | 원본 CIA SHA-256 | `1c30dbf804667b78ebf82cac20bf8ce289ca4efb2bbb97820b8d759f19de7ef3` |
-| xdelta 크기 | 1,027,927,039 바이트 |
-| xdelta SHA-256 | `06d8b8e40f5a694ca544ff96ea35d9ce90a8980cf1286943a74c8fe0c1dabd90` |
-| 결과 CIA 크기 | 1,059,288,064 바이트 |
-| 결과 CIA SHA-256 | `80e284f6420d4e2711515da1c6b887b366591ec25fcbc0b834184a2c36dc3795` |
+| xdelta 크기 | 1,027,936,330 바이트 |
+| xdelta SHA-256 | `4d1c2b142a22ed017e0e4a8e6c6e6e155a329dc023b18022e20d08686c2dd8dd` |
+| 결과 CIA 크기 | 1,059,304,448 바이트 |
+| 결과 CIA SHA-256 | `cee4cc51f2952340a1b5c784361561d74b341232602c34676219c8b33816d8a4` |
 
 ## 주의
 - **패치가 원본만큼 큽니다(약 1GB).** 원본 CIA는 암호화되어 있고 결과물은 복호화 상태(NoCrypto)라서, 차분 파일에 거의 모든 데이터가 들어갑니다. 결과 CIA는 서명되지 않은 상태입니다.
